@@ -10,7 +10,7 @@ pipeline {
         script {
             properties([pipelineTriggers([pollSCM('30 * * * *')])])
         }
-        git 'https://github.com/hodayaYProject/docker_jenkins_backend.git'
+        git 'https://github.com/hodayaYProject/game.git'
       }
     }
     stage('Building image') {
@@ -29,7 +29,7 @@ pipeline {
     }
     stage('Remove Unused docker image') {
       steps{
-        bat "docker rmi $registry:$BUILD_NUMBER"
+        bat "docker rmi WoG:$BUILD_NUMBER"
       }
     }
   }
