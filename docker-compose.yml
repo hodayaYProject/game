@@ -1,0 +1,10 @@
+version: '3'
+services:
+  web:
+    build: .
+    ports:
+     - "8777:5000"
+#    volumes:
+#      -.:/app
+  app:
+    image: "devhodi/docker-test:${BUILD_NUMBER}"
